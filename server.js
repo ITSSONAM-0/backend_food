@@ -11,19 +11,20 @@ connectDB();
 const app = express();
 
 const CLIENT_URLS = [
-    process.env.CLIENT_URL || "http://localhost:5173",
-    "http://localhost:5174",
-    "https://frontend-food-seven.vercel.app/"
+  process.env.CLIENT_URL || "http://localhost:5173",
+  "http://localhost:5174",
+  "https://frontend-food-seven.vercel.app"
 ];
 
 app.use(
-    cors({
-        origin: CLIENT_URLS,
-        methods: ["GET", "POST", "PUT", "DELETE"],
-        credentials: true,
-    })
+  cors({
+    origin: CLIENT_URLS,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
 );
 
+app.options("*", cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
