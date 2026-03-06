@@ -13,6 +13,7 @@ const app = express();
 const CLIENT_URLS = [
     process.env.CLIENT_URL || "http://localhost:5173",
     "http://localhost:5174",
+    "https://frontend-food-seven.vercel.app/"
 ];
 
 app.use(
